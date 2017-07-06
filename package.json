@@ -1,0 +1,28 @@
+{
+  "name": "simple-hapi-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "start:watch": "nodemon -x 'npm start'",
+
+    "test": "tape test/*.test.js | faucet",
+    "test:debug": "tape test/*.test.js",
+    "test:debug:watch": "nodemon -x 'npm run test:debug'",
+    "test:watch": "nodemon -x 'npm test'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "hapi": "^16.4.3",
+    "inert": "^4.2.0",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.7.0"
+  }
+}
