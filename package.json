@@ -1,12 +1,12 @@
 {
   "name": "simple-hapi-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "repository": "https://github.com/samhstn/simple-hapi-boilerplate.git",
+  "description": "simple-hapi-boilerplate",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
     "start:watch": "nodemon -x 'npm start'",
-
     "test": "tape test/*.test.js | faucet",
     "test:debug": "tape test/*.test.js",
     "test:debug:watch": "nodemon -x 'npm run test:debug'",
