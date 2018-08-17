@@ -1,5 +1,10 @@
 const tape = require('tape');
-const server = require('../server/server.js');
+const {server, setup} = require('../server/server.js');
+
+tape('setup', async (t) => {
+  await setup();
+  t.end();
+});
 
 tape('GET :: /', (t) => {
   server.inject('/')

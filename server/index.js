@@ -1,8 +1,12 @@
 const assert = require('assert');
-const server = require('./server.js');
+const {setup, server} = require('./server.js');
 
-server.start((err) => {
-  assert(!err, err);
+const start = async () => {
+  await setup();
+
+  await server.start();
 
   console.log('Server running on ' + server.info.uri);
-});
+};
+
+start();

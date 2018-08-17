@@ -16,17 +16,16 @@ const views = {
   relativeTo: __dirname
 };
 
-const port = process.env.PORT || 4444;
+const server = Hapi.Server({ port: process.env.PORT || 4444 });
 
-const server = new Hapi.Server();
+const setup = async () => {
+  try {
+    await server.register(plugins);
+    server.views(views);
+    server.route(routes);
+  } catch (err) {
+    assert(!err, err);
+  }
+}
 
-server.connection({ port });
-
-server.register(plugins, (err) => {
-  assert(!err, err);
-
-  server.views(views);
-  server.route(routes);
-});
-
-module.exports = server;
+module.exports = {server, setup};
